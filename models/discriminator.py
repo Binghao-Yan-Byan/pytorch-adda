@@ -18,7 +18,8 @@ class Discriminator(nn.Module):
             nn.Linear(hidden_dims, hidden_dims),
             nn.ReLU(),
             nn.Linear(hidden_dims, output_dims),
-            nn.LogSoftmax()
+            # based on the paper, the loss function should output logits instead of LogSoftmax() 
+            # nn.LogSoftmax()
         )
 
     def forward(self, input):
